@@ -4,6 +4,20 @@ In the termainl, we must type in and press ENTER:
 
 `pip3 install flask`
 
+# Running Flask
+In the terminal, make sure you are in the same directory as `main.py` file you 
+want to run, then type in
+
+`python3 main.py 8080`
+
+And press enter.
+
+If your terminal is *not* at the same directory as `main.py`, you can right click on
+the folder (under the explorer and select `Open terminal at`)
+
+**Note:** You can only run one Flask server at a time. Be sure to press CTRL+C to quit
+the existing one when you are done.
+
 # How to a set up a route that uses a HTML template
 
 1. Create a folder named `templates` that is in the same level as your `app.y`
