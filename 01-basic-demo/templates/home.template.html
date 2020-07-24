@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Welcome {{first_name}} {{last_name}} </h1>
+    <a href="{{ url_for('about_us') }}">About Us</a>
+    <a href="{{ url_for('add_two', n1=4, n2=5) }}">Add 5 to 4</a>
+    <div>
+      <img src="static/dog.gif"/>
+    </div>
+    <script src="static/script.js"></script>
 </body>
 </html>

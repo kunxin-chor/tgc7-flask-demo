@@ -20,3 +20,30 @@ template file to be called)
 def about_us():
     return render_template('about.template.html')
 ```
+
+# Routes with parameters
+Inside the url for `@app.route` we can specify parameters with `<parameter-name>`.
+Take a look at the example below:
+
+```
+@app.route('/add/<n1>/<n2>')
+def add_two(n1, n2):
+    total = int(n1) + int(n2)
+    return render_template('math.template.html', num1=n1,
+                           num2=n2, result=total)
+
+```
+In the case above, the url `/add/4/5` will map 4 to `n1` and 5 to `n2`.
+
+
+# Static files
+All asset files such as images, css, js etc. they will all go under
+a folder named `static`
+
+To access them, just use the following:
+
+```
+<div>
+    <img src="static/dog.gif"/>
+</div>
+```

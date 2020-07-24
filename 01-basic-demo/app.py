@@ -10,11 +10,13 @@ def home():
     fname = "Paul"
     lname = "Chor"
     return render_template("home.template.html",
-                           first_name=fname, last_name=lname)
+                           first_name=fname, last_name=lname
+                           )
 
 
-@app.route('/about')
+@app.route('/about-our-fantastic-web-store')
 def about_us():
+
     return render_template('about.template.html')
 
 
