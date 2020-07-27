@@ -27,8 +27,8 @@ def contact_us():
 def process_contact_us():
     fullname = request.form.get('fullname')
     email = request.form.get('email')
-    return render_template('contact_us_success.template.html', 
-    fullname=fullname, email=email)
+    return render_template('contact_us_success.template.html',
+                           fullname=fullname, email=email)
 
 
 @app.route('/calculate')
@@ -41,9 +41,9 @@ def process_calculator():
     num1 = request.form.get('number1')
     num2 = request.form.get('number2')
     total = int(num1) + int(num2)
-    with open('total.txt','a') as fptr:
+    with open('total.txt', 'a') as fptr:
         fptr.write(str(total)+'\n')
-    
+
     return render_template('results.template.html', number1=num1, number2=num2, total=total)
 
 
@@ -58,6 +58,33 @@ def process_pokemon_search():
     r = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_name}')
     pokemon_data = r.json()
     return pokemon_data['name']
+
+
+@app.route('/survey')
+def show_survey_form():
+    return render_template('survey.template.html')
+
+
+@app.route('/survey', methods=["POST"])
+def process_survey_form():
+
+    region_text = {
+        'north': "North (Yishun, AMK etc.)",
+        'east': "East (Marina Parade, East Coast etc.)",
+        'south': "South (Marina Bay, Tiong Bahru etc.)",
+        'west': "Jurong, Boon Lay, Tuas"
+    }
+
+    response_time = request.form.get('response-time')
+    service = request.form.get('service')
+    attribution = request.form.getlist('attribution')
+    region = request.form.get('region')
+    return render_template('thank-you.template.html',
+                           response_time=response_time,
+                           service=service,
+                           attribution=", ".join(attribution),
+                           region=region_text.get(region)
+                           )
 
 
 # "magic code" -- boilerplate

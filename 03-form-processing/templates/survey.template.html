@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="POST">
+      <div>
+        <label>Are you ok with the response time?</label>
+        <input type="radio" name="response-time" value="1" checked/>1
+        <input type="radio" name="response-time" value="2" />2
+        <input type="radio" name="response-time" value="3"/>3
+      </div>
+      <div>
+        <label>How will you rate our staff's services? ?</label>
+        <input type="radio" name="service" value="1" checked/>1
+        <input type="radio" name="service" value="2"/>2
+        <input type="radio" name="service" value="3"/>3
+      </div>
+      <div>
+        <label>How did you hear about us?</label>
+        <input type="checkbox" name="attribution" value="word-of-mouth"/> Word of Mouth
+        <input type="checkbox" name="attribution" value="social-media"/> Social media
+        <input type="checkbox" name="attribution" value="newspaper-ad"/> Newspaper Ad
+      </div>
+      <div>
+        <label>Which region are you from?</label>
+        <select name="region">
+            <option value="north">North (Yishun, AMK etc.)</option>
+            <option value="south">South (Marina Bay, Tiong Bahru etc.)</option>
+            <option value="east">East (Marina Parade, East Coast etc.)</option>
+            <option value="west">Jurong, Boon Lay, Tuas</option>
+        </select>
+      </div>
+      <input type="submit"/>
+    </form>
+  </body>
+</html>
