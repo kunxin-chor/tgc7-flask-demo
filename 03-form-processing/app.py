@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
+import requests
 
 app = Flask(__name__)
 
@@ -44,6 +45,19 @@ def process_calculator():
         fptr.write(str(total)+'\n')
     
     return render_template('results.template.html', number1=num1, number2=num2, total=total)
+
+
+@app.route('/pokemon_search')
+def show_pokemon_search():
+    return render_template('pokemon_search.template.html')
+
+
+@app.route('/pokemon_search', methods=["POST"])
+def process_pokemon_search():
+    pokemon_name = request.form.get('search-for')
+    r = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_name}')
+    pokemon_data = r.json()
+    return pokemon_data['name']
 
 
 # "magic code" -- boilerplate
