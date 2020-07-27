@@ -19,3 +19,24 @@ In the POST version of the route, use the https://www.alphavantage.co/query?func
 retrieve and display the exchange rate.
 
 You need to provide your own api key.
+
+## Q4: Validation
+
+In a route, display the form to ask the user for their first name, last name
+and email address.
+
+After processing the form, if the user has entered at least:
+
+* Entered three characters for the first name
+* Entered three characters for the last name
+* email address contains a '@'
+
+Then display in the template "Sign up successful".
+
+If there any field doesn't match its rule, display in the template
+"There are some issues signing up". Display in an unordered list (i.e, bullet point)
+the criteria that the user didn't meet.
+
+Advanced: Change the form to Bootstrap, and use Bootstrap error class
+to display the issues. See https://getbootstrap.com/docs/4.0/components/forms/#server-side for 
+some hints.
