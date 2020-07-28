@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Chat Room</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Your username"/> <br/>
+        <textarea name="chat-message"></textarea>
+        <input type="submit"/>
+    </form>
+    {%for m in messages %}
+    <div>
+        <p>From: {{m.by}}</p>
+        <blockquote>
+            {{m.content}}
+        </blockquote>
+    </div>
+    {%endfor%}
+</body>
+</html>
