@@ -23,5 +23,15 @@
     </div>
     {% endfor %}
 </div>
-
 {% endblock %}
+
+{%block additional_js%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script>
+    axios.post('/api/dummy', {
+        'data':"hello world"
+    }).then(function(r){
+        console.log(r.response);
+    })
+</script>
+{%endblock%}

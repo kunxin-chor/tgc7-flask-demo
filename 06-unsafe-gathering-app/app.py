@@ -122,6 +122,14 @@ def delete_report(report_id):
     return redirect(url_for('show_all'))
 
 
+@app.route('/api/dummy', methods=["POST"])
+def echo():
+    data = request.json.get('data')
+    return {
+        "data": data
+    }
+
+
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
