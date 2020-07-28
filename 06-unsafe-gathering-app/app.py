@@ -130,6 +130,13 @@ def echo():
     }
 
 
+@app.route('/api/all_reports')
+def api_all_reports():
+    return {
+        'reports': database
+    }
+
+
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
